@@ -16,7 +16,7 @@ A Claude Code plugin for spec-driven feature development. Write a one-liner, get
 ## Installation
 
 ```bash
-/plugin install specforge@your-github-username
+/plugin install specforge@marcmallet
 ```
 
 ## Configuration
