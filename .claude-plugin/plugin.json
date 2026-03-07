@@ -1,6 +1,6 @@
 {
   "name": "specforge",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Spec-driven feature development workflow. Create, plan, implement and review features using external spec files.",
   "author": {
     "name": "Marc Mallet"

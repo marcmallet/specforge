@@ -7,7 +7,6 @@ A Claude Code plugin for spec-driven feature development. Write a one-liner, get
 | Command | Description |
 |---|---|
 | `/specforge:config` | Set the directory where specs, plans and reviews are saved for this project |
-| `/specforge:jira` | Fetch a Jira ticket and create a spec from it automatically |
 | `/specforge:create` | Create a new feature spec from a ticket number, title and description |
 | `/specforge:plan` | Generate an implementation plan from a spec |
 | `/specforge:implement` | Implement a feature using parallel sub-agents |
@@ -67,19 +66,7 @@ You only need to do this once. The path is saved to `.claude/specforge/config.js
 
 ---
 
-### 1. Create a spec — `/specforge:create` or `/specforge:jira`
-
-There are two ways to create a spec depending on whether you use Jira.
-
-**From Jira** — if your team uses Jira, run:
-
-```bash
-/specforge:jira PROJ-1234
-```
-
-This fetches the ticket directly using the Jira CLI, parses the title, description and acceptance criteria, and generates a spec from it. No copy-pasting required. See [Jira integration](#jira-integration) for setup instructions.
-
-**Manually** — if you don't use Jira or want to write the description yourself:
+### 1. Create a spec — `/specforge:create`
 
 Before writing any code, you need a clear definition of what you're building. The create command takes your plain English description and turns it into a structured spec covering requirements, acceptance criteria, technical notes and out of scope items. Claude shows you the draft first and only saves it after you confirm, so you stay in control of what goes on record.
 
@@ -153,47 +140,7 @@ At any point in the workflow you can check where a feature stands. This command 
     review.md    ← what was verified
 ```
 
-Where `<specs-dir>` is the value of `SPECFORGE_SPECS_DIR` from `~/.claude/settings.json`, or `.claude/specforge/` inside your project if not set.
-
-## Jira Integration
-
-The `/specforge:jira` command uses the [Atlassian CLI (`acli`)](https://developer.atlassian.com/cloud/acli/guides/introduction/) to fetch ticket details directly. No API tokens or configuration in `settings.json` required — credentials are handled entirely by `acli`.
-
-### Setup
-
-**1. Install the Atlassian CLI**
-
-macOS:
-```bash
-brew tap atlassian/homebrew-acli
-brew install acli
-```
-
-Other platforms: see the [Atlassian CLI installation docs](https://developer.atlassian.com/cloud/acli/guides/install-acli/).
-
-**2. Authenticate**
-
-```bash
-acli auth login
-```
-
-Follow the prompts to connect to your Jira instance.
-
-**3. Verify it works**
-
-```bash
-acli jira workitem view PROJ-1234
-```
-
-If that returns your ticket, `/specforge:jira` will work.
-
-### Usage
-
-```bash
-/specforge:jira PROJ-1234
-```
-
-Specforge will fetch the ticket, show you what it found, and ask for confirmation before generating and saving the spec.
+Where `<specs-dir>` is configured via `/specforge:config`, or `.claude/specforge/` inside your project if not set.
 
 ## Agents
 
