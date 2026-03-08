@@ -72,3 +72,4 @@ Pass it:
 2. If any agent reports an ambiguity, stop and ask the user before proceeding
 3. Do not implement anything outside the spec scope
 4. Summarise what was built, which agents were used (project or plugin), and list any deviations from the spec
+5. Suggest the next step: "Ready to review? Run `/specforge:review $ARGUMENTS`"

@@ -55,3 +55,4 @@ Rules:
 4. Do NOT save the file yet — show the spec to the user first and ask:
    - "Does this look right? Any changes before I save it?"
    - Only save after confirmation
+5. After saving, suggest the next step: "Ready to plan? Run `/specforge:plan <ticket-number>`"

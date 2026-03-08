@@ -37,3 +37,5 @@ Then do the following:
 9. Save the final plan to <specs-dir>/$ARGUMENTS/plan.md
 
 Do not write any code yet. This is planning only.
+
+After saving the plan, suggest the next step: "Ready to implement? Run `/specforge:implement $ARGUMENTS`"

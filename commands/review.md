@@ -41,3 +41,4 @@ Pass it:
 1. Merge findings into a single report saved to <specs-dir>/$ARGUMENTS/review.md
 2. Note which agents were used (project or plugin) in the report
 3. Suggest any additions to ~/.claude/CLAUDE.md but ask for confirmation before writing them
+4. Suggest the next step: "Check the full status with `/specforge:status $ARGUMENTS`"
