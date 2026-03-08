@@ -20,6 +20,13 @@ A Claude Code plugin for spec-driven feature development. Write a one-liner, get
 /plugin install specforge@marcmallet/specforge
 ```
 
+### Updating
+
+```bash
+/plugin update specforge@marcmallet/specforge
+/reload-plugins
+```
+
 ## Configuration
 
 All specs, plans and reviews are saved to a single directory, one subfolder per ticket:
