@@ -5,14 +5,14 @@
   },
   "metadata": {
     "description": "Marc Mallet's Claude Code plugins",
-    "version": "1.0.3"
+    "version": "1.0.4"
   },
   "plugins": [
     {
       "name": "specforge",
       "source": "./",
       "description": "Spec-driven feature development workflow",
-      "version": "1.0.3"
+      "version": "1.0.4"
     }
   ]
 }
