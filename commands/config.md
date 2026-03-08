@@ -11,8 +11,8 @@ The user has provided: $ARGUMENTS
 If no path was provided, ask the user for one before continuing.
 
 Accepted formats:
-- Absolute path: `/Users/marc/Documents/Obsidian/Features`
-- Path with tilde: `~/Documents/Obsidian/Features`
+- Absolute path: `/Users/username/Documents/Features`
+- Path with tilde: `~/Documents/Features`
 - Relative to project: `./specs`
 
 Steps:
