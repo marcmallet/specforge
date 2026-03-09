@@ -1,6 +1,10 @@
-# SpecForge
+<p align="center">
+  <img alt="SpecForge" src="/assets/logo.svg" width="300" /><br><br>
+  A Claude Code plugin for spec-driven feature development. Write a one-liner, <br>
+  get a full spec, plan, implementation and review — all tracked in one place.
+</p>
 
-A Claude Code plugin for spec-driven feature development. Write a one-liner, get a full spec, plan, implementation and review — all tracked in one place.
+<hr>
 
 ## Commands
 
