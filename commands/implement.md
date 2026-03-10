@@ -1,5 +1,5 @@
 ---
-description: Implement a feature using phased parallel sub-agents for backend, frontend, shared and tests
+description: Implement a feature using phased parallel sub-agents for backend, frontend and shared
 argument-hint: <ticket-number>
 allowed-tools: Read, Write, Edit, Bash(mkdir -p *)
 model: inherit
@@ -25,7 +25,6 @@ Before spawning any agents, check for project-level agents in `.claude/agents/`:
 - If `.claude/agents/backend.md` exists → use it for backend tasks, otherwise use the plugin's `agents/backend.md`
 - If `.claude/agents/frontend.md` exists → use it for frontend tasks, otherwise use the plugin's `agents/frontend.md`
 - If `.claude/agents/shared.md` exists → use it for shared tasks, otherwise use the plugin's `agents/shared.md`
-- If `.claude/agents/tests.md` exists → use it for test tasks, otherwise use the plugin's `agents/tests.md`
 
 ## Phase 1 — Run in parallel
 
@@ -57,19 +56,10 @@ Pass it:
 - The Shared Contracts section from the plan
 - All files created or modified by the backend and frontend agents
 
-## Phase 3 — Run after Phase 2 completes
-
-Wait for the shared agent to finish before starting.
-
-### Tests Agent
-Pass it:
-- The full spec
-- The full plan
-- All files created or modified by all previous agents
-
 ## After all agents finish
 1. Update the checklist in <specs-dir>/$ARGUMENTS/plan.md marking all completed tasks as done
 2. If any agent reports an ambiguity, stop and ask the user before proceeding
 3. Do not implement anything outside the spec scope
 4. Summarise what was built, which agents were used (project or plugin), and list any deviations from the spec
-5. Suggest the next step: "Ready to review? Run `/specforge:review $ARGUMENTS`"
+5. Remind the user to write tests for the implemented code
+6. Suggest the next step: "Ready to review? Run `/specforge:review $ARGUMENTS`"

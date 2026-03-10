@@ -27,7 +27,6 @@ Then do the following:
    - `[backend]` — server side only, no frontend files touched
    - `[frontend]` — client side only, no backend files touched
    - `[both]` — spans both backend and frontend (e.g. a template that needs data bindings AND markup)
-   - `[tests]` — test coverage tasks
 5. For any task tagged `[both]`, define the shared contract explicitly:
    - File(s) involved
    - Field names, endpoint paths, data shapes both sides must agree on

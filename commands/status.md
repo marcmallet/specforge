@@ -22,6 +22,6 @@ Read the following files if they exist:
 
 Output a summary showing:
 - Feature name and one-line description
-- Plan status: how many tasks are complete vs total, broken down by [backend], [frontend], [both], [tests]
+- Plan status: how many tasks are complete vs total, broken down by [backend], [frontend], [both]
 - Review status: if a review exists, show the requirement coverage summary
 - Next recommended action (plan / implement / review / done)
