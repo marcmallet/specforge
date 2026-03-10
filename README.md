@@ -27,10 +27,9 @@
 
 ### Updating
 
-```bash
-/plugin update specforge@marcmallet/specforge
-/reload-plugins
-```
+1. Run `/plugin` and select the `marcmallet/specforge` marketplace
+2. Choose the option to update the marketplace
+3. Run `/reload-plugins` to pick up the changes
 
 ## Configuration
 
