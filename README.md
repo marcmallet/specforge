@@ -198,7 +198,7 @@ Official docs: https://support.atlassian.com/atlassian-rovo-mcp-server/docs/gett
 
 ### Option B — Community mcp-atlassian server
 
-Uses an API token. Restricted to only the `jira_get_issue` tool via the `--enabled-tools` flag, which is a stronger security boundary than Option A.
+Uses an API token with two layers of restriction: `ENABLED_TOOLS` limits Claude Code to only `jira_get_issue`, and `READ_ONLY_MODE` blocks all write operations at the server level as a hard guarantee.
 
 **Setup:**
 
@@ -213,21 +213,20 @@ Uses an API token. Restricted to only the `jira_get_issue` tool via the `--enabl
   "mcpServers": {
     "mcp-atlassian": {
       "command": "uvx",
-      "args": [
-        "mcp-atlassian",
-        "--enabled-tools", "jira_get_issue"
-      ],
+      "args": ["mcp-atlassian"],
       "env": {
         "JIRA_URL": "https://your-company.atlassian.net",
         "JIRA_USERNAME": "your.email@company.com",
-        "JIRA_API_TOKEN": "your_api_token"
+        "JIRA_API_TOKEN": "your_api_token",
+        "ENABLED_TOOLS": "jira_get_issue",
+        "READ_ONLY_MODE": "true"
       }
     }
   }
 }
 ```
 
-The `--enabled-tools jira_get_issue` flag means Claude Code can **only** call the issue read tool — nothing else, regardless of what permissions the token has.
+`ENABLED_TOOLS` restricts Claude Code to only the issue read tool. `READ_ONLY_MODE` adds a second independent layer — it blocks all write operations at the server level regardless of any other setting. Together they give the strongest possible read-only guarantee.
 
 4. Restart Claude Code and verify with `/mcp` — you should see `mcp-atlassian` listed with only `jira_get_issue`.
 
